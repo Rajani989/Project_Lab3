@@ -63,7 +63,8 @@ public class AccountProblem1 {                                 //class AccountPr
 	public static void main(String... args) {                  //Main method
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);                      //Take input the details
-		System.out.println("Enter the type of Account: 1.Current Account/2.Saving Account");
+		System.out.println("Enter the type of Account: ");
+	    System.out.println("Press number: 1.Current Account 2.Saving Account");
 		int type=sc.nextInt();
 		System.out.println("Enter the Account number: ");
 		int num=sc.nextInt();
@@ -94,11 +95,11 @@ public class AccountProblem1 {                                 //class AccountPr
         case 2:
         	 switch(val)
      	    {
-     	    case 3: ca.depositeAmount1(amt);
+     	    case 3: sa.depositeAmount1(amt);
      	    break;
-     	    case 4: ca.withdrawAmount1(amt);
+     	    case 4: sa.withdrawAmount1(amt);
      	    break;
-     	    case 5: ca.getBalance();
+     	    case 5: sa.getBalance();
      	    break;
      	    }
         }
