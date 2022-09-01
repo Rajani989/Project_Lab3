@@ -9,8 +9,8 @@ import java.util.Scanner;
 abstract class Account                                //abstract class account
 {
    public abstract void getBalance();
-   public abstract void depositeAmount();
-   public abstract void withdrawAmount();
+   public abstract void depositeAmount1(int amt);
+   public abstract void withdrawAmount1(int amt);
 }
 
 class CurrentAc extends Account                          //current account extends account
@@ -20,18 +20,19 @@ class CurrentAc extends Account                          //current account exten
 	{
 		System.out.println("Balance is: "+balance);
 	}
-	@Override
-	public void depositeAmount()                       //depositeAccount method
+	
+	public void depositeAmount1(int amt)                       //depositeAccount method
 	{ 
 		balance=balance+amt-transFee;	
 		System.out.println("Balance is: "+balance);
 	}
 	@Override
-	public void withdrawAmount()                          //withdrawAccount method
+	public void withdrawAmount1(int amt)                          //withdrawAccount method
 	{
 		balance=balance-amt-transFee;	
 		System.out.println("Balance is: "+balance);
 	}
+	
 }
 
  class SavingAc extends Account                         //Saving Account extends Account
@@ -41,22 +42,23 @@ class CurrentAc extends Account                          //current account exten
 	{
 		System.out.println("Balance is: "+balance);
 	}
-	@Override
-	public void depositeAmount()                       //depositeAccount method
+	
+	public void depositeAmount1(int amt)                       //depositeAccount method
 	{
 
 		balance=balance+amt;
 		System.out.println("Balance is: "+balance);
 	}
 	@Override
-	public void withdrawAmount()                            //withdrawAccount method
+	public void withdrawAmount1(int amt)                            //withdrawAccount method
 	{
 		balance=balance-amt;
 		System.out.println("Balance is: "+balance);
 	}
+	
 }
 
-public class AccountProblem {                                 //class AccountProblem
+public class AccountProblem1 {                                 //class AccountProblem
 
 	public static void main(String... args) {                  //Main method
 		// TODO Auto-generated method stub
@@ -80,21 +82,24 @@ public class AccountProblem {                                 //class AccountPro
         case 1: 
         	    switch(val)
         	    {
-        	    case 3: ca.depositeAmount();
+        	    case 3: ca.depositeAmount1(amt);
         	    break;
-        	    case 4: ca.withdrawAmount(amt);
+        	    case 4: ca.withdrawAmount1(amt);
         	    break;
-        	    case 5: ca.getBalance(amt);
+        	    case 5: ca.getBalance();
+        	    break;
         	    
         	    }
+        	    break;
         case 2:
         	 switch(val)
      	    {
-     	    case 3: ca.depositeAmount();
+     	    case 3: ca.depositeAmount1(amt);
      	    break;
-     	    case 4: ca.withdrawAmount();
+     	    case 4: ca.withdrawAmount1(amt);
      	    break;
      	    case 5: ca.getBalance();
+     	    break;
      	    }
         }
         
